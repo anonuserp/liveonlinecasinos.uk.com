@@ -89,6 +89,7 @@
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
       }
       .header-container {
+        position: relative;
         max-width: 1200px;
         margin: 0 auto;
         padding: 16px 20px;
@@ -101,6 +102,40 @@
         height: 48px;
         width: auto;
         object-fit: contain;
+      }
+      .header-nav {
+        display: flex;
+        align-items: center;
+        gap: 24px;
+      }
+      .nav-btn {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+        padding: 8px 16px;
+        border-radius: 6px;
+        transition: all 0.2s ease;
+        border: none;
+        background: none;
+        cursor: pointer;
+      }
+      .nav-btn:hover {
+        background: #f7fafc;
+        color: var(--accent-1);
+      }
+      .menu-toggle {
+        display: none;
+        background: none;
+        border: none;
+        color: var(--text-primary);
+        cursor: pointer;
+        padding: 8px;
+        font-size: 24px;
+        line-height: 1;
+      }
+      .menu-toggle:hover {
+        color: var(--accent-1);
       }
       .hero-wrapper {
         background: linear-gradient(135deg, var(--accent-1) 0%, #003d8f 100%);
@@ -440,6 +475,102 @@
         .casino-card { padding: 24px 20px; }
         .casino-header { flex-direction: column; }
         .info-section { padding: 24px 20px; }
+        .header-container {
+          padding: 12px 16px;
+        }
+        .header-logo {
+          height: 40px;
+        }
+        .header-nav {
+          display: none;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: var(--bg-main);
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0;
+          padding: 16px 0;
+          border-top: 1px solid var(--border-color);
+          box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        .header-nav.active {
+          display: flex;
+        }
+        .nav-btn {
+          width: 100%;
+          padding: 12px 20px;
+          text-align: left;
+          border-radius: 0;
+          border-bottom: 1px solid var(--border-color);
+        }
+        .nav-btn:last-child {
+          border-bottom: none;
+        }
+        .menu-toggle {
+          display: block;
+        }
+        .hero-wrapper {
+          padding: 40px 0;
+        }
+        .hero-container {
+          padding: 0 16px;
+        }
+        .hero-content {
+          gap: 24px;
+        }
+        .hero-text h1 {
+          font-size: 32px;
+        }
+        .hero-text h2 {
+          font-size: 18px;
+        }
+        .author-info {
+          margin-top: 24px;
+          padding-top: 20px;
+        }
+        .toc {
+          padding: 20px 24px;
+        }
+        .section h2 {
+          font-size: 28px;
+        }
+        .casino-title {
+          font-size: 22px;
+        }
+        .casino-rating {
+          margin-top: 12px;
+        }
+        .faq-question {
+          padding: 16px 20px;
+          font-size: 16px;
+        }
+        .faq-answer {
+          padding: 0 20px 16px 20px;
+          font-size: 15px;
+        }
+      }
+      @media (max-width: 480px) {
+        .hero-text h1 {
+          font-size: 28px;
+        }
+        .hero-text h2 {
+          font-size: 16px;
+        }
+        .section h2 {
+          font-size: 24px;
+        }
+        .casino-card {
+          padding: 20px 16px;
+        }
+        .casino-title {
+          font-size: 20px;
+        }
+        .btn-play {
+          padding: 14px 24px;
+          font-size: 14px;
+        }
       }
     </style>
   </head>
@@ -447,6 +578,18 @@
     <header>
       <div class="header-container">
         <a href="/"><img src="logo-slot-machine.png" alt="Live Online Casinos UK - Slot Machine Logo" class="header-logo" /></a>
+        <nav class="header-nav" id="header-nav">
+          <a href="/" class="nav-btn">Home</a>
+          <a href="best-casinos-not-on-gamstop.html" class="nav-btn">Best casinos not on gamstop</a>
+          <a href="#faq" class="nav-btn">FAQ's</a>
+        </nav>
+        <button class="menu-toggle" aria-label="Toggle menu" id="menu-toggle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
       </div>
     </header>
 
@@ -861,6 +1004,31 @@
 
     <script>
       document.getElementById('year').textContent = new Date().getFullYear();
+      
+      // Mobile menu toggle
+      const menuToggle = document.getElementById('menu-toggle');
+      const headerNav = document.getElementById('header-nav');
+      
+      if (menuToggle && headerNav) {
+        menuToggle.addEventListener('click', function() {
+          headerNav.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a nav link
+        const navLinks = headerNav.querySelectorAll('.nav-btn');
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function() {
+            headerNav.classList.remove('active');
+          });
+        });
+        
+        // Close menu when clicking outside
+        document.addEventListener('click', function(event) {
+          if (!headerNav.contains(event.target) && !menuToggle.contains(event.target)) {
+            headerNav.classList.remove('active');
+          }
+        });
+      }
     </script>
   </body>
 </html>
