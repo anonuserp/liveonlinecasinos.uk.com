@@ -586,6 +586,7 @@
           border-radius: 0;
           border-bottom: 1px solid rgba(255, 255, 255, 0.1);
           color: #FFFFFF;
+          font-size: 15px;
         }
         .nav-btn:last-child {
           border-bottom: none;
@@ -604,19 +605,48 @@
         }
         .hero-text h1 {
           font-size: 32px;
+          line-height: 1.2;
         }
         .hero-text h2 {
           font-size: 18px;
         }
+        .hero-image {
+          max-width: 100%;
+          height: auto;
+        }
         .author-info {
           margin-top: 24px;
           padding-top: 20px;
+          flex-wrap: wrap;
+        }
+        .author-thumbnail {
+          width: 48px;
+          height: 48px;
+        }
+        .author-name {
+          font-size: 15px;
+        }
+        .section {
+          margin-bottom: 48px;
         }
         .section h2 {
           font-size: 28px;
+          margin-bottom: 20px;
         }
         .section h3 {
           font-size: 24px;
+          margin-bottom: 16px;
+        }
+        .section p {
+          font-size: 15px;
+          line-height: 1.7;
+        }
+        .section ul {
+          padding-left: 20px;
+        }
+        .section li {
+          font-size: 15px;
+          margin-bottom: 10px;
         }
         .faq-question {
           padding: 16px 20px;
@@ -629,8 +659,27 @@
         .highlight-box {
           padding: 24px 20px;
         }
+        .highlight-box h3 {
+          font-size: 20px;
+        }
+        .highlight-box ul {
+          padding-left: 20px;
+        }
+        .highlight-box li {
+          font-size: 15px;
+        }
         .toc {
           padding: 20px 24px;
+          margin-bottom: 32px;
+        }
+        .toc h3 {
+          font-size: 18px;
+        }
+        .toc ul {
+          padding-left: 18px;
+        }
+        .toc a {
+          font-size: 14px;
         }
         .casino-card {
           padding: 24px 20px;
@@ -641,14 +690,63 @@
         }
         .casino-title-row {
           width: 100%;
+          flex-wrap: wrap;
+        }
+        .casino-logo {
+          width: 56px;
+          height: 56px;
+        }
+        .casino-title {
+          font-size: 22px;
         }
         .casino-rating {
           margin-top: 12px;
         }
+        .star {
+          width: 20px;
+          height: 20px;
+        }
+        .rating-text {
+          font-size: 16px;
+        }
+        .casino-description {
+          font-size: 15px;
+        }
+        .casino-screenshot {
+          margin: 20px 0;
+        }
+        .btn-play {
+          padding: 12px 24px;
+          font-size: 13px;
+          width: 100%;
+          max-width: 100%;
+        }
+        .info-section h3 {
+          font-size: 22px;
+        }
+        .info-section h4 {
+          font-size: 18px;
+        }
+        .info-section p,
+        .info-section li {
+          font-size: 15px;
+        }
+        footer {
+          padding: 24px 16px;
+          margin-top: 64px;
+        }
+        footer p {
+          font-size: 13px;
+        }
       }
       @media (max-width: 480px) {
+        .container { padding: 16px 12px; }
+        .hero-wrapper {
+          padding: 32px 0;
+        }
         .hero-text h1 {
           font-size: 28px;
+          line-height: 1.2;
         }
         .hero-text h2 {
           font-size: 16px;
@@ -658,6 +756,68 @@
         }
         .section h3 {
           font-size: 20px;
+        }
+        .section p {
+          font-size: 14px;
+        }
+        .section li {
+          font-size: 14px;
+        }
+        .casino-card {
+          padding: 20px 16px;
+        }
+        .casino-title {
+          font-size: 20px;
+        }
+        .casino-logo {
+          width: 48px;
+          height: 48px;
+        }
+        .casino-description {
+          font-size: 14px;
+        }
+        .btn-play {
+          padding: 10px 20px;
+          font-size: 12px;
+        }
+        .toc {
+          padding: 16px 20px;
+        }
+        .toc h3 {
+          font-size: 16px;
+        }
+        .toc a {
+          font-size: 13px;
+        }
+        .info-section {
+          padding: 20px 16px;
+        }
+        .info-section h3 {
+          font-size: 20px;
+        }
+        .info-section h4 {
+          font-size: 16px;
+        }
+        .highlight-box {
+          padding: 20px 16px;
+        }
+        .highlight-box h3 {
+          font-size: 18px;
+        }
+        .faq-question {
+          padding: 14px 16px;
+          font-size: 15px;
+        }
+        .faq-answer {
+          padding: 0 16px 14px 16px;
+          font-size: 14px;
+        }
+        .author-thumbnail {
+          width: 44px;
+          height: 44px;
+        }
+        .author-name {
+          font-size: 14px;
         }
       }
     </style>
