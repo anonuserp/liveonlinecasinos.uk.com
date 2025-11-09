@@ -249,8 +249,150 @@
         .hero-image { order: 1; }
       }
       main { padding: 0 0 80px; }
+      .toc {
+        background: #f7fafc;
+        border-left: 4px solid var(--accent-2);
+        padding: 24px 32px;
+        margin-bottom: 48px;
+        border-radius: 0 8px 8px 0;
+      }
+      .toc h3 {
+        margin: 0 0 16px 0;
+        font-size: 20px;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+      .toc ul {
+        margin: 0;
+        padding-left: 20px;
+        list-style: none;
+      }
+      .toc li {
+        margin-bottom: 8px;
+      }
+      .toc a {
+        color: var(--accent-1);
+        text-decoration: none;
+        font-size: 15px;
+        transition: color 0.2s ease;
+      }
+      .toc a:hover {
+        color: var(--accent-2);
+        text-decoration: underline;
+      }
       .section {
         margin-bottom: 64px;
+      }
+      .casino-card {
+        background: var(--bg-main);
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        padding: 32px;
+        transition: all 0.3s ease;
+        box-shadow: var(--card-shadow);
+        position: relative;
+        margin: 32px 0;
+      }
+      .casino-card:hover {
+        border-color: var(--accent-1);
+        box-shadow: var(--card-shadow-hover);
+        transform: translateY(-2px);
+      }
+      .casino-header {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 20px;
+        margin-bottom: 16px;
+        flex-wrap: wrap;
+      }
+      .casino-title-row {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        flex: 1;
+      }
+      .casino-logo {
+        width: 64px;
+        height: 64px;
+        object-fit: contain;
+        border-radius: 8px;
+        border: 1px solid var(--border-color);
+        background: #f7fafc;
+        padding: 8px;
+        flex-shrink: 0;
+      }
+      .casino-title {
+        margin: 0;
+        font-size: 28px;
+        font-weight: 700;
+        color: var(--text-primary);
+        letter-spacing: -0.3px;
+      }
+      .casino-rating {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        flex-shrink: 0;
+      }
+      .star {
+        width: 24px;
+        height: 24px;
+        fill: #fbbf24;
+        stroke: #f59e0b;
+        stroke-width: 0.5;
+      }
+      .star-empty {
+        fill: #e5e7eb;
+        stroke: #d1d5db;
+      }
+      .rating-text {
+        margin-left: 8px;
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-primary);
+      }
+      .casino-description {
+        margin: 16px 0 0 0;
+        font-size: 16px;
+        line-height: 1.7;
+        color: var(--text-secondary);
+      }
+      .casino-footer {
+        margin-top: 24px;
+        padding-top: 24px;
+        border-top: 1px solid var(--border-color);
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+      }
+      .casino-disclaimer {
+        font-size: 12px;
+        color: var(--text-muted);
+        line-height: 1.5;
+        margin: 0;
+      }
+      .btn-play {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: linear-gradient(135deg, var(--accent-2) 0%, #a00d24 100%);
+        color: #FFFFFF;
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 16px;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 12px rgba(200, 16, 46, 0.3);
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+      }
+      .btn-play:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(200, 16, 46, 0.4);
+        filter: brightness(1.1);
       }
       .section h2 {
         font-size: clamp(28px, 4vw, 40px);
@@ -526,12 +668,26 @@
     </div>
 
     <main class="container">
+      <section class="toc">
+        <h3>Table of Contents</h3>
+        <ul>
+          <li><a href="#short-answer">The Short Answer</a></li>
+          <li><a href="#club-house">The Club House — My Top Pick</a></li>
+          <li><a href="#why-it-works">Why It Works This Way</a></li>
+          <li><a href="#why-players-moving">Why Players Are Moving to Crypto Gambling</a></li>
+          <li><a href="#is-it-safe">Is It Safe?</a></li>
+          <li><a href="#taxes">What About Taxes?</a></li>
+          <li><a href="#final-thoughts">Final Thoughts</a></li>
+          <li><a href="#faq">Frequently Asked Questions</a></li>
+        </ul>
+      </section>
+
       <section class="section">
         <p>Most people asking "is crypto gambling legal in the UK" get confusing answers. Some sites say yes. Others say no. The truth is simple — it depends where you play.</p>
         <p>Let's make it clear.</p>
       </section>
 
-      <section class="section info-section">
+      <section id="short-answer" class="section info-section">
         <h3>The Short Answer</h3>
         <p><strong>Crypto gambling is legal for UK players, but it is not regulated by the UK Gambling Commission.</strong></p>
         <p>That means:</p>
@@ -543,14 +699,51 @@
         <p>The law does not ban players from using crypto. It only limits what UK licensed casinos can offer.</p>
       </section>
 
-      <section class="section info-section">
+      <section id="club-house" class="casino-card">
+        <div class="casino-header">
+          <div class="casino-title-row">
+            <img src="The-Clubhouse.jpg" alt="The Club House Casino" class="casino-logo" />
+            <h3 class="casino-title">The Club House — My Top Pick for UK Crypto Gambling</h3>
+          </div>
+          <div class="casino-rating">
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <svg class="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="0.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            <span class="rating-text">5.0/5</span>
+          </div>
+        </div>
+        <p class="casino-description">After reviewing hundreds of platforms, The Club House stands out as the best crypto casino for UK players. Here is why I recommend it:</p>
+        <ul>
+          <li>Accepts major cryptocurrencies including Bitcoin and Ethereum</li>
+          <li>Fast withdrawals within hours</li>
+          <li>No wagering conditions on most bonuses</li>
+          <li>Fully licensed under international gaming laws</li>
+          <li>Transparent, fair, and consistent</li>
+        </ul>
+        <p>The Club House combines everything UK crypto players look for — speed, trust, and freedom. I have tested their platform personally. Withdrawals are quick. Bonuses are clear. Support is responsive. It's exactly what crypto gambling should be.</p>
+        <div class="casino-footer">
+          <a href="/go/the-club-house" class="btn-play">
+            Play at The Club House
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" x2="21" y1="14" y2="3"></line>
+            </svg>
+          </a>
+          <p class="casino-disclaimer">18+ T&amp;C's apply. Please gamble responsibly, contact 0808 8020 133 if you need help quitting.</p>
+        </div>
+      </section>
+
+      <section id="why-it-works" class="section info-section">
         <h3>Why It Works This Way</h3>
         <p>The UK Gambling Commission has strict financial rules. Every transaction must go through a verifiable payment system — banks, cards, or approved e-wallets.</p>
         <p>Crypto is decentralized, which makes it harder to track for anti-money laundering checks. So, most UK-licensed casinos simply avoid it.</p>
         <p>That's why players use offshore crypto casinos instead. These sites are licensed in other jurisdictions, often Curacao, Malta, or Cyprus, and they legally accept UK players.</p>
       </section>
 
-      <section class="section info-section">
+      <section id="why-players-moving" class="section info-section">
         <h3>Why Players Are Moving to Crypto Gambling</h3>
         <p>Many UK players are moving toward crypto casinos for good reason:</p>
         <ul>
@@ -563,22 +756,7 @@
         <p>Traditional casinos often slow down payments or block deposits. Crypto cuts out the middleman.</p>
       </section>
 
-      <section class="section highlight-box">
-        <h3>The Club House — My Top Pick for UK Crypto Gambling</h3>
-        <p>After reviewing hundreds of platforms, The Club House stands out as the best crypto casino for UK players.</p>
-        <p>Here is why I recommend it:</p>
-        <ul>
-          <li>Accepts major cryptocurrencies including Bitcoin and Ethereum</li>
-          <li>Fast withdrawals within hours</li>
-          <li>No wagering conditions on most bonuses</li>
-          <li>Fully licensed under international gaming laws</li>
-          <li>Transparent, fair, and consistent</li>
-        </ul>
-        <p>The Club House combines everything UK crypto players look for — speed, trust, and freedom.</p>
-        <p>I have tested their platform personally. Withdrawals are quick. Bonuses are clear. Support is responsive. It's exactly what crypto gambling should be.</p>
-      </section>
-
-      <section class="section info-section">
+      <section id="is-it-safe" class="section info-section">
         <h3>Is It Safe?</h3>
         <p><strong>Yes — if you use the right casino.</strong></p>
         <p>Crypto gambling is safe when the site is licensed and transparent. Always check:</p>
@@ -591,14 +769,14 @@
         <p>The Club House passes every test. Many sites do not.</p>
       </section>
 
-      <section class="section info-section">
+      <section id="taxes" class="section info-section">
         <h3>What About Taxes?</h3>
         <p>Good news — gambling winnings in the UK are not taxed, including crypto gambling.</p>
         <p>That means if you win with Bitcoin or Ethereum, your earnings are yours to keep.</p>
         <p>However, always monitor your crypto portfolio. If you later convert large amounts to fiat, HMRC may require capital gains reporting.</p>
       </section>
 
-      <section class="section info-section">
+      <section id="final-thoughts" class="section info-section">
         <h3>Final Thoughts</h3>
         <p>So, is crypto gambling legal in the UK?</p>
         <p><strong>Yes. It's perfectly legal for players — you just have to use international platforms.</strong></p>
@@ -607,7 +785,7 @@
       </section>
 
       <!-- FAQ Section -->
-      <section class="section faq-section">
+      <section id="faq" class="section faq-section">
         <h2>Frequently Asked Questions</h2>
         
         <div class="faq-item">
